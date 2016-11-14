@@ -1,0 +1,18 @@
+<template>
+    <p>
+        <img src="http://localhost:64857/api/Graphic/${book.graphicId}" height="200px">
+    </p>
+    <p>
+        <h2>${book.title}</h2>
+    </p>
+    <p>
+        <h3>Author: ${book.authorName} ${book.authorSurname}</h3>
+    </p>
+    <p>
+        <h3>Quantity: ${book.quantity}</h3>
+    </p>
+
+    <input type="number" value.bind="bookId">
+    <button class="btn btn-default" click.trigger="searchBookById()">Search</button>
+   
+</template>

@@ -1,0 +1,24 @@
+<template>
+    <table class="table">
+        <tr>
+          <th>Title</th>
+          <th>Author</th>
+          <th>Change availability</th>
+          <th>Remove</th>
+        </tr>
+        <tr repeat.for="book of books" class="${book.isAvailable? 'success' : ''}">
+            <td>${book.title}</td>
+            <td>${book.author}</td>
+            <td>
+                <button click.trigger="changeBookAvailability(book)">Change</button>
+            </td>
+            <td>
+                <button click.trigger="removeBook(book)" if.bind="!book.isAvailable">Remove</button>
+            </td>
+        </tr>
+    </table>
+
+    <input value.bind="newBook.title">
+    <input value.bind="newBook.author">
+    <button click.trigger="addBook()">Add</button>
+</template>
